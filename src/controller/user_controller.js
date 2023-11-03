@@ -20,29 +20,29 @@ const allUser = async (req, res, next) => {
 
 const loginUser = async (req, res, next) => {
     try {
-        console.log(req.body);
         const {emailUser, passwordUser} = req.body;
         const user = await db.Users.findOne({
            where: {
             emailUser: req.body.emailUser,
            } 
         });
+        const password = await db.Users.findOne({
+            where:{
+                passwordUser: req.body.passwordUser,
+            }
+        });
         if(!user){
             res.status(400).json(`${emailUser} not found`);
         } else {
-            const passwordValid = await bcrypt.compare(passwordUser, db.Users.passwordUser);
-            if(!passwordValid){
+            if(!password){
                 return res.json(`Incorrect email or password!!!`)
+            }else{
+                res.json({
+                    id: req.body.id,
+                    emailUser: req.body.emailUser,
+                    passwordUser: req.body.passwordUser,
+                });
             }
-            const token = jwt.sign({id: db.Users.id}, process.env.JWT_SECRET,{
-                expiresIn: process.env.JWT_REFRESH_EXPIRATION
-            });
-            res.status.json({
-                id: req.body.id,
-                emailUser: req.body.emailUser,
-                passwordUser: req.body.passwordUser,
-                accessToken: token
-            });
         }
     } catch (error) {
         next(error);
@@ -67,8 +67,9 @@ const createUser = async (req, res, next) => {
                 //id: genarateId(),
                 emailUser: req.body.emailUser,
                 nameUser: req.body.nameUser,
-                passwordUser: await bcrypt.hash(passwordUser, 15),
-                phoneUser: req.body.phoneUser
+                passwordUser: req.body.passwordUser,
+                phoneUser: req.body.phoneUser,
+                avatarUser: req.body.avatarUser
             });
             return res.json({
                 status: 1,
