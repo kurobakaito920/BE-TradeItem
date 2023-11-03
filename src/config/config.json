@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "123456",
+    "database": "raovat",
+    "host": "localhost",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "sa",
+    "password": "123456",
+    "database": "raovat",
+    "host": "localhost",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "sa",
+    "password": "123456",
+    "database": "raovat",
+    "host": "localhost",
+    "dialect": "mssql"
+  }
+}

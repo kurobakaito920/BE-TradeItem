@@ -1,0 +1,50 @@
+@host = http://localhost:9000/api
+
+POST {{host}}/auth/createUser HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameUser": "thekiet",
+    "emailUser": "thekiet@gmail.com",
+    "passwordUser": "thekiet123",
+    "phoneUser": "0912345678"
+    //"avatarUser": "abcbcbcbcc"
+}
+###
+
+GET {{host}}/auth/userAPI HTTP/1.1
+Content-Type: application/json
+###
+
+
+POST {{host}}/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "emailUser":"thekiet@gmail.com",
+    "passwordUser":"thekiet123"
+}
+###
+
+DELETE {{host}}/auth/deleteUser/4 HTTP/1.1
+Content-Type: application/json
+###
+
+POST {{host}}/cate/createCate HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameCategory": "smart phone"
+}
+###
+
+PUT {{host}}/cate/updateCate/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameCategory": "pc" 
+}
+###
+
+DELETE {{host}}/cate/deleteCate/1 HTTP/1.1
+Content-Type: application/json
