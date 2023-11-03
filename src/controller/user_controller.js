@@ -35,12 +35,12 @@ const loginUser = async (req, res, next) => {
             res.status(400).json(`${emailUser} not found`);
         } else {
             if(!password){
-                return res.json(`Incorrect email or password!!!`)
+                return res.json({
+                    code: 0
+                })
             }else{
                 res.json({
-                    id: req.body.id,
-                    emailUser: req.body.emailUser,
-                    passwordUser: req.body.passwordUser,
+                    code: 1
                 });
             }
         }
