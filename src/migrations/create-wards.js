@@ -5,12 +5,12 @@ module.exports = {
     await queryInterface.createTable('Wards', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
       },
       districtID: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       nameWard: {
         type: Sequelize.STRING

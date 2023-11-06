@@ -5,15 +5,14 @@ module.exports = {
     await queryInterface.createTable('Comments', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
       },
       userID: {
-        type: Sequelize.INTEGER,
-
+        type: Sequelize.INTEGER
       },
-      content: {
+      contentComment: {
         type: Sequelize.STRING
       },
       timeComment: {
@@ -27,10 +26,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Comments');
-    await queryInterface.removeConstraint('Comments', 'comment_userId_fkey');
   }
 };

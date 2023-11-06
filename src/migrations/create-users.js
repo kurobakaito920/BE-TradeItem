@@ -5,15 +5,9 @@ module.exports = {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      newsFavoriteID: {
-        type: Sequelize.INTEGER,
-      },
-      productNewsID: {
-        type: Sequelize.INTEGER,
       },
       nameUser: {
         type: Sequelize.STRING

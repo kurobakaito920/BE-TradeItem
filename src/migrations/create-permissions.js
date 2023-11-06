@@ -2,26 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('imageSliders', {
+    await queryInterface.createTable('Permissions', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
       },
-      imageSlider: {
-        type: Sequelize.STRING
-      },
-      imageSlider2: {
-        type: Sequelize.STRING
-      },
-      imageSlider3: {
-        type: Sequelize.STRING
-      },
-      imageSlider4: {
-        type: Sequelize.STRING
-      },
-      imageSlider5: {
+      namePermission: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -35,6 +23,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('imageSliders');
+    await queryInterface.dropTable('Permissions');
   }
 };

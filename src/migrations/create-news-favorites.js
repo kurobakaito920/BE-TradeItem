@@ -5,12 +5,15 @@ module.exports = {
     await queryInterface.createTable('newsFavorites', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER
       },
       newsID: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
+      },
+      userID: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
