@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.Districts,{
-        foreignKey: "districtID",
-        targetKey: "id",
+      this.belongsTo(models.Disctricts,{
+        foreignKey: 'districtID',
+        targetKey: 'id'
       });
     }
   }
   Wards.init({
-    districtID: DataTypes.STRING,
+    districtID: DataTypes.INTEGER,
     nameWard: DataTypes.STRING
   }, {
     sequelize,

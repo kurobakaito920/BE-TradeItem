@@ -11,17 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Users,{
-        foreignKey: "userID",
-        targetKey: "id",
+        foreignKey: 'userID',
+        targetKey: 'id'
       });
       this.hasMany(models.News,{
-        foreignKey: "commentID",
+        foreignKey: 'commentID'
       });
     }
   }
   Comments.init({
-    userID: DataTypes.STRING,
-    content: DataTypes.STRING,
+    userID: DataTypes.INTEGER,
+    contentComment: DataTypes.STRING,
     timeComment: DataTypes.STRING
   }, {
     sequelize,

@@ -11,16 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.News,{
-        foreignKey: "newsID",
-        targetKey: "id",
+        foreignKey: 'newsID',
+        targetKey: 'id'
       });
-      this.hasMany(models.Users,{
-        foreignKey: "newsFavoriteID",
+      this.belongsTo(models.Users,{
+        foreignKey: 'userID',
+        targetKey: 'id'
       });
     }
   }
   newsFavorites.init({
-    newsID: DataTypes.STRING
+    newsID: DataTypes.INTEGER,
+    userID: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'newsFavorites',

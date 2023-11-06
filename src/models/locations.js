@@ -11,16 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Cities,{
-        foreignKey: "cityID",
-        targetKey: "id",
+        foreignKey: 'cityID',
+        targetKey: 'id',
       });
-      this.hasMany(models.News,{
-        foreignKey: "locationID",
+      this.hasMany(models.News, {
+        foreignKey: 'locationID'
       });
     }
   }
   Locations.init({
-    cityID: DataTypes.STRING,
+    cityID: DataTypes.INTEGER,
     nameStreet: DataTypes.STRING
   }, {
     sequelize,

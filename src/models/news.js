@@ -11,27 +11,24 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Locations,{
-        foreignKey: "locationID",
-        targetKey: "id",
+        foreignKey: 'locationID',
+        targetKey: 'id'
       });
       this.belongsTo(models.Comments,{
-        foreignKey: "commentID",
-        targetKey: "id",
-      })
-      this.hasMany(models.productNews,{
-        foreignKey: "newsID",
+        foreignKey: 'commentID',
+        targetKey: 'id'
       });
       this.hasMany(models.newsFavorites,{
-        foreignKey: "newsID",
+        foreignKey: 'newsID',
       });
-      this.hasMany(models.Rates,{
-        foreignKey: "newsID",
+      this.hasMany(models.productNews,{
+        foreignKey: 'newsID',
       });
     }
   }
   News.init({
-    locationID: DataTypes.STRING,
-    commentID: DataTypes.STRING,
+    locationID: DataTypes.INTEGER,
+    commentID: DataTypes.INTEGER,
     description: DataTypes.STRING,
     timeUpload: DataTypes.STRING
   }, {
