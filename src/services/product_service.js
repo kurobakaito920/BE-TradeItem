@@ -41,8 +41,13 @@ const createProduct = (data) => {
                     subCategoryID: data.subCategoryID,
                     categoryID: data.categoryID,
                     nameProduct: data.nameProduct,
+                    imgProduct: data.imgProduct,
                     pricesProduct: data.pricesProduct,
                     status: data.status,
+                    imgSlide1: data.imgSlide1,
+                    imgSlide2: data.imgSlide2,
+                    imgSlide3: data.imgSlide3,
+                    imgSlide4: data.imgSlide4,
                 }
             });
             resolve({
@@ -62,8 +67,13 @@ const updateProduct = (pid, data) => {
                 subCategoryID: data.subCategoryID,
                 categoryID: data.categoryID,
                 nameProduct: data.nameProduct,
+                imgProduct: data.imgProduct,
                 pricesProduct: data.pricesProduct,
-                status: data.status 
+                status: data.status,
+                imgSlide1: data.imgSlide1,
+                imgSlide2: data.imgSlide2,
+                imgSlide3: data.imgSlide3,
+                imgSlide4: data.imgSlide4,
             }, 
             {
                 where: {id: pid}
