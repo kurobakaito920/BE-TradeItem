@@ -53,7 +53,7 @@ const createWard = (data) => {
 const updateWard = (wid, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.Wards.update({districtID: data.district.id, nameWard: data.nameWard},
+            const response = await db.Wards.update({districtID: data.districtID, nameWard: data.nameWard},
                 {
                     where: {id: wid}
                 });
