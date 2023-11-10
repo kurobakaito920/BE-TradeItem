@@ -30,7 +30,7 @@ const createDistrict = (data) => {
                 },
                 defaults: {
                     id: data.id,
-                    cityID: data.city,
+                    cityID: data.cityID,
                     nameDistrict: data.nameDistrict
                 }
             });
@@ -47,7 +47,7 @@ const createDistrict = (data) => {
 const updateDistrict = (did, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.Districts.update({cityID: data.city.id, nameDistrict: data.nameDistrict},
+            const response = await db.Districts.update({cityID: data.cityID, nameDistrict: data.nameDistrict},
                 {
                     where: {id: did}
                 });
