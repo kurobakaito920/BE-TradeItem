@@ -4,7 +4,7 @@ const route = express.Router();
 
 route.get('/disAPI', disController.allDistrict);
 route.post('/createDis', disController.storeDistrict);
-route.put('/updateDis', disController.updateDistrict);
-route.delete('/deleteDis', disController.deleteDistrict);
+route.put('/updateDis/:id', disController.updateDistrict);
+route.delete('/deleteDis/:id', disController.deleteDistrict);
 
 module.exports = route;
