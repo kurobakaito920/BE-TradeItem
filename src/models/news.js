@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   News.init({
     locationID: DataTypes.INTEGER,
     commentID: DataTypes.INTEGER,
+    tittle: DataTypes.STRING,
     description: DataTypes.STRING,
     timeUpload: DataTypes.STRING
   }, {
