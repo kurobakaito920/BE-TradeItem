@@ -18,7 +18,7 @@ const imgSlide = () => {
 const createImgSlide = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.imgSlide.Create({
+            const response = await db.imgSlide.create({
                 id: data.id,
                 imageSlider: data.imageSlider,
                 imageSlider2: data.imageSlider2,
