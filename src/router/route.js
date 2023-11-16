@@ -6,6 +6,9 @@ import routeCity from "./city.js";
 import routeDis from "./district.js";
 import routeWard from "./ward.js";
 import routePer from "./permission.js";
+import routeSlide from "./imgslide.js"
+import routeLocation from "./location.js";
+import routeNews from "./news.js";
 
 const app = (app) =>{
     app.use("/api/auth", routeUser);
@@ -16,6 +19,9 @@ const app = (app) =>{
     app.use("/api/district", routeDis);
     app.use("/api/ward", routeWard);
     app.use("/api/permission", routePer);
+    app.use("/api/slide", routeSlide);
+    app.use("/api/location", routeLocation);
+    app.use("/api/news", routeNews);
 }
 
 module.exports = app;
