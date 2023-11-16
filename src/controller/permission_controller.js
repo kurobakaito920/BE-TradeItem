@@ -22,7 +22,7 @@ const storePermission = async (req, res, next) => {
     }
 };
 
-const updatePermisson = async (req, res, next) => {
+const updatePermission = async (req, res, next) => {
     try {
         const response = await services.updatePer(req.params.id, req.body);
         if(response) res.json({
@@ -47,6 +47,6 @@ const deletePermission = async (req, res, next) => {
 module.exports = {
     allPermission,
     storePermission,
-    updatePermisson,
+    updatePermission,
     deletePermission
 }
