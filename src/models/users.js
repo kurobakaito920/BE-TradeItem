@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.userPermissions,{
         foreignKey: 'userID'
       });
+      this.hasMany(models.Rates,{
+        foreignKey: 'userID'
+      });
     }
   }
   Users.init({
