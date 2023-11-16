@@ -22,6 +22,7 @@ const userPer = () => {
                     exclude: ["createdAt", "updatedAt", "userID", "permissionID"]
                 }
             });
+            resolve(userPermission);
         } catch (error) {
             reject(error);
         }
