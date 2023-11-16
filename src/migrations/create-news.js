@@ -12,9 +12,6 @@ module.exports = {
       locationID: {
         type: Sequelize.INTEGER
       },
-      commentID: {
-        type: Sequelize.INTEGER
-      },
       description: {
         type: Sequelize.STRING
       },

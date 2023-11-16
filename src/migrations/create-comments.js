@@ -12,6 +12,9 @@ module.exports = {
       userID: {
         type: Sequelize.INTEGER
       },
+      newsID:{
+        type: Sequelize.INTEGER
+      },
       contentComment: {
         type: Sequelize.STRING
       },
