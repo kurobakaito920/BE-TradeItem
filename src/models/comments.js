@@ -14,8 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'userID',
         targetKey: 'id'
       });
-      this.hasMany(models.News,{
-        foreignKey: 'commentID'
+      this.belongsTo(models.News,{
+        foreignKey: 'newsID',
+        targetKey: 'id'
       });
     }
   }

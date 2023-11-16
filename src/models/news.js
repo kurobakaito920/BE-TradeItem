@@ -14,16 +14,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'locationID',
         targetKey: 'id'
       });
-      this.belongsTo(models.Comments,{
-        foreignKey: 'commentID',
-        targetKey: 'id'
-      });
+      this.hasMany(models.Comments,{
+        foreignKey: 'newsID',
+      })
       this.hasMany(models.newsFavorites,{
         foreignKey: 'newsID',
       });
       this.hasMany(models.productNews,{
         foreignKey: 'newsID',
       });
+      this.hasMany(models.Rates,{
+        foreignKey: 'newsID',
+      })
     }
   }
   News.init({
