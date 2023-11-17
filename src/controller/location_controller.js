@@ -33,7 +33,7 @@ const updateLocation = async (req, res, next) => {
     }
 };
 
-const deleteLocation = async (req, res, res) => {
+const deleteLocation = async (req, res, next) => {
     try {
         const response = await service.deleteLocation(req.params.id);
         if(response) res.json({

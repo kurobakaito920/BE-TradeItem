@@ -22,14 +22,11 @@ const locations = () => {
 const createLocation = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.Locations.findOrCreate({
-                where: {nameCity: data.nameCity},
-                defaults: {
-                    id: data.id,
-                    cityID: data.cityID,
-                    nameStreet: data.nameStreet
-                }
-            });
+            const response = await db.Locations.create({
+                id: data.id,
+                cityID: data.cityID,
+                nameStreet: data.nameStreet,
+            })
             resolve({
                 status: response[1]? 0 : 1,
                 msg: response[1]? "Created" : "locations has been created",
