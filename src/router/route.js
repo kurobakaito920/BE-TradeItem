@@ -9,6 +9,10 @@ import routePer from "./permission.js";
 import routeSlide from "./imgslide.js"
 import routeLocation from "./location.js";
 import routeNews from "./news.js";
+import routeUserPer from "./userPermission";
+import routeProdNews from "./prodnews.js";
+import routeNewsFavor from "./newsfavor.js";
+import routeComment from "./comment.js";
 
 const app = (app) =>{
     app.use("/api/auth", routeUser);
@@ -22,6 +26,10 @@ const app = (app) =>{
     app.use("/api/slide", routeSlide);
     app.use("/api/location", routeLocation);
     app.use("/api/news", routeNews);
+    app.use("/api/userPermission", routeUserPer);
+    app.use("/api/prodNews", routeProdNews);
+    app.use("/api/newsFavor", routeNewsFavor);
+    app.use("/api/comment", routeComment);
 }
 
 module.exports = app;
