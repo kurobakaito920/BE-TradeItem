@@ -13,6 +13,8 @@ import routeUserPer from "./userPermission";
 import routeProdNews from "./prodnews.js";
 import routeNewsFavor from "./newsfavor.js";
 import routeComment from "./comment.js";
+import routeRate from "./rate.js";
+import routeOrder from "./order.js";
 
 const app = (app) =>{
     app.use("/api/auth", routeUser);
@@ -30,6 +32,8 @@ const app = (app) =>{
     app.use("/api/prodNews", routeProdNews);
     app.use("/api/newsFavor", routeNewsFavor);
     app.use("/api/comment", routeComment);
+    app.use("/api/rate", routeRate);
+    app.use("/api/order", routeOrder);
 }
 
 module.exports = app;
