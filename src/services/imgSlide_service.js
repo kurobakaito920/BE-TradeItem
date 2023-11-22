@@ -3,12 +3,12 @@ import db from "../models/index.js";
 const imgSlide = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            const imgSlide = await db.imgSlide.findAll({
+            const imgSlides = await db.imageSliders.findAll({
                 attributes: {
                     exclude: ["createdAt", "updatedAt"]
                 }
             });
-            resolve(imgSlide);
+            resolve(imgSlides);
         } catch (error) {
             reject(error);
         }
@@ -18,7 +18,7 @@ const imgSlide = () => {
 const createImgSlide = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.imgSlide.create({
+            const response = await db.imageSliders.create({
                 id: data.id,
                 imageSlider: data.imageSlider,
                 imageSlider2: data.imageSlider2,
@@ -39,7 +39,7 @@ const createImgSlide = (data) => {
 const updateImgSlide = (isid, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.imgSlide.update({
+            const response = await db.imageSliders.update({
                 imageSlider: data.imageSlider,
                 imageSlider2: data.imageSlider2,
                 imageSlider3: data.imageSlider3,
@@ -63,7 +63,7 @@ const updateImgSlide = (isid, data) => {
 const deleteImgSlide = (isid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await db.imgSlide.destroy({
+            const response = await db.imageSliders.destroy({
                 where: {
                     id: isid,
                 }

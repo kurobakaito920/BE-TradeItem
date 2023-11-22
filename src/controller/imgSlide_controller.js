@@ -2,9 +2,9 @@ import * as service from "../services/imgSlide_service.js";
 
 const allImgSlide = async (req, res, next) => {
     try {
-        const imgSlide = await service.imgSlide();
+        const imageSlider = await service.imgSlide();
         res.json({
-            result: imgSlide,
+            result: imageSlider,
         });
     } catch (error) {
         next(error);

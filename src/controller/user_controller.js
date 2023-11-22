@@ -1,10 +1,5 @@
-import createError from "http-errors";
+
 import * as services from "../services/user_service.js";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import {userValidate, uid} from "../config/validatation.js";
-import { v4 as genarateId } from "uuid";
-import joi from "joi";
 import db from "../models/index.js";
 
 const allUser = async (req, res, next) => {
@@ -51,12 +46,7 @@ const loginUser = async (req, res, next) => {
 
 const createUser = async (req, res, next) => {
     try {
-        console.log(req.body);
         const {emailUser, passwordUser} = req.body;
-        // const {error} = userValidate(req.body);
-        // if(error){
-        //     throw createError(error.details[0].message);
-        // }
         const isExistEmail = await db.Users.findOne({
             where: {emailUser}
         })
