@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Rates.init({
-    valueRate: DataTypes.INTEGER(5),
+    valueRate: DataTypes.INTEGER,
     timeRate: DataTypes.STRING,
     newsID: DataTypes.INTEGER,
     userID: DataTypes.INTEGER

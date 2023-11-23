@@ -1,4 +1,4 @@
-import db from "../models/userpermissions.js";
+import db from "../models/index.js";
 
 const userPer = () => {
     return new Promise(async (resolve, reject) => {

@@ -1,5 +1,6 @@
 
 import * as services from "../services/user_service.js";
+import * as perServices from "../services/userPermission_service.js";
 import db from "../models/index.js";
 
 const allUser = async (req, res, next) => {
@@ -15,30 +16,36 @@ const allUser = async (req, res, next) => {
 
 const loginUser = async (req, res, next) => {
     try {
-        const {emailUser, passwordUser} = req.body;
-        const user = await db.Users.findOne({
-           where: {
-            emailUser: req.body.emailUser,
-           } 
-        });
-        const password = await db.Users.findOne({
-            where:{
-                passwordUser: req.body.passwordUser,
-            }
-        });
-        if(!user){
-            res.status(400).json(`${emailUser} not found`);
-        } else {
-            if(!password){
-                return res.json({
-                    code: 0
-                })
-            }else{
-                res.json({
-                    code: 1
-                });
-            }
+        const response = await services.loginUsers(req.body);
+        if(response){
+            res.json({
+                result: response,
+            });
         }
+        // const {emailUser, passwordUser} = req.body;
+        // const user = await db.Users.findOne({
+        //    where: {
+        //     emailUser: req.body.emailUser,
+        //    } 
+        // });
+        // const password = await db.Users.findOne({
+        //     where:{
+        //         passwordUser: req.body.passwordUser,
+        //     }
+        // });
+        // if(!user){
+        //     res.status(400).json(`${emailUser} not found`);
+        // } else {
+        //     if(!password){
+        //         return res.json({
+        //             code: 0
+        //         })
+        //     }else{
+        //         res.json({
+        //             code: 1
+        //         });
+        //     }
+        // }
     } catch (error) {
         next(error);
     }
