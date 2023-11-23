@@ -33,7 +33,7 @@ const updateRate = async(req, res, next) => {
     }
 };
 
-const deleteRate = async(req, res, res) => {
+const deleteRate = async(req, res, next) => {
     try {
         const response = await service.deleteRate(req.params.id);
         if(response) res.json({

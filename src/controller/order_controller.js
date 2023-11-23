@@ -33,7 +33,7 @@ const updateOrder = async (req, res, next) => {
     }
 };
 
-const deleteOrder = async (req, res, res) => {
+const deleteOrder = async (req, res, next) => {
     try {
         const response = await service.deleteOrder(req.params.id);
         if(response) res.json({
