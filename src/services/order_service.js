@@ -35,7 +35,7 @@ const createOrder = (data) => {
             const response = await db.Orders.create({
                 id: data.id,
                 userID: data.userID,
-                producID: data.producID
+                productID: data.productID
             });
             resolve({
                 status: response[1]? 0 : 1,
@@ -52,7 +52,7 @@ const updateOrder = (oid, data) => {
         try {
             const response = await db.Orders.update({
                 userID: data.userID,
-                productID: data.producID
+                productID: data.productID
             },{
                 where: {id: oid}
             });
