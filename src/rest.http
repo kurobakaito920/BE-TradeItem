@@ -53,3 +53,106 @@ Content-Type: application/json
     "categoryID": ,
     "nameSubcategory": ""
 }
+
+###
+POST {{host}}/prod/createProd HTTP/1.1
+Content-Type: application/json
+
+{
+    "categoryID": ,
+    "sucategoryID": ,
+    "nameProduct": "",
+    "imgProduct": "",
+    "pricesProduct": "",
+    "status": "",
+    "imgSlide1": "",
+    "imgSlide2": "",
+    "imgSlide3": "",
+    "imgSlide4": ""
+}
+
+###
+POST {{host}}/cities/createCities HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameCity": ""
+}
+
+###
+POST {{host}}/district/createDis HTTP/1.1
+Content-Type: application/json
+
+{
+    "cityID": ,
+    "nameDistrict": ""
+}
+
+###
+POST {{host}}/ward/createWard HTTP/1.1
+Content-Type: application/json
+
+{
+    "districtID": ,
+    "nameWard": ""
+}
+
+###
+POST {{host}}/location/createLocation HTTP/1.1
+Content-Type: application/json
+
+{
+    "cityID": ,
+    "nameStreet": ""
+}
+
+###
+POST {{host}}/news/createNews HTTP/1.1
+Content-Type: application/json
+
+{
+    "locationID": ,
+    "title": "",
+    "description": "",
+    "timeUpload": ""
+}
+
+POST {{host}}/prodNews/createProdNews HTTP/1.1
+Content-Type: application/json
+
+{
+    "newsID": ,
+    "productID": ,
+    "userID": 
+}
+
+###
+POST {{host}}/comment/createComment HTTP/1.1
+Content-Type: application/json
+
+{
+    "userID": ,
+    "newsID": ,
+    "contentComment": "",
+    "timeComment": ""
+}
+
+###
+POST {{host}}/rate/createRate HTTP/1.1
+Content-Type: application/json
+
+{
+    "valueRate": , //Từ 1 tới 5
+    "timeRate": "",
+    "newsID": ,
+    "userID": 
+}
+
+###
+POST {{host}}/order/createOrder HTTP/1.1
+Content-Type: application/json
+
+{
+    "productID": ,
+    "userID": 
+}
