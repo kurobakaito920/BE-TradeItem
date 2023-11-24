@@ -58,7 +58,10 @@ const createUser = async (req, res, next) => {
             where: {emailUser}
         })
         if(isExistEmail){
-            res.status(400).json(`${emailUser} is has already`);
+            res.json({
+                code: 0,
+                message: `${emailUser} already exists`
+            });
         } else {
             const saveUser = await db.Users.create({
                 //id: genarateId(),
